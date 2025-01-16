@@ -95,13 +95,7 @@ jobs:
         release_name: ${{ github.event.inputs.release_name }}
         draft: false
         prerelease: false
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.repository }}
+        files: ./build_lineage.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
-    - name: Upload Build Script to Release
-      uses: softprops/action-gh-release@v2
-      with:
-        upload_url: ${{ steps.create-release.outputs.upload_url }}
-        asset_path: ./build_lineage.sh
-        asset_name: build_lineage.sh
-        asset_content_type: application/x-shellscript
