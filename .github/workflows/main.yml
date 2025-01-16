@@ -1,4 +1,4 @@
-name: Generate and Publish LineageOS Build Script
+name: LineageOS Build Script Generator
 
 on:
   workflow_dispatch:
